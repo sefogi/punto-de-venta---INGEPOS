@@ -76,11 +76,43 @@ VITE_SUPABASE_ANON_KEY=tu_clave_anonima_de_supabase
 
 ### Base de Datos
 
-El sistema requiere las siguientes tablas en Supabase:
+El sistema utiliza Supabase como base de datos. Para configurar la base de datos, sigue estos pasos:
 
-- `products`: Gestión de productos
-- `sales`: Registro de ventas
-- `company_settings`: Configuración de la empresa
+1. **Configurar Supabase CLI**:
+
+   ```bash
+   # Instalar Supabase CLI si no lo tienes
+   pnpm add supabase --save-dev
+
+   # Iniciar sesión en Supabase (necesitarás tu access token)
+   supabase login
+   ```
+2. **Inicializar Supabase en el proyecto**:
+
+   ```bash
+   # Si es la primera vez
+   supabase init
+   ```
+3. **Ejecutar las migraciones**:
+
+   ```bash
+   # Esto aplicará todas las migraciones en orden
+   supabase db reset
+   ```
+
+Las migraciones crearán y configurarán las siguientes tablas:
+
+- `products`: Gestión de productos y inventario
+- `sales`: Registro de ventas y detalles de transacciones
+- `sale_items`: Detalles de los productos en cada venta
+- `company_settings`: Configuración de la empresa (información fiscal, logo, etc.)
+
+Cada tabla incluye:
+
+- Políticas de seguridad Row Level Security (RLS)
+- Índices para optimización
+- Triggers para automatización
+- Referencias y claves foráneas
 
 ## 📱 Uso
 
@@ -104,7 +136,7 @@ El sistema requiere las siguientes tablas en Supabase:
 - **Nombre**: Sebastian Forero
 - **Contacto**: 617-786-268
 - **Horario**: Lunes a Viernes, 8:00 AM - 6:00 PM
-- **Email**: ingenios.inc@gmail.com
+- **Email**: [ingenios.inc@gmail.com](mailto:ingenios.inc@gmail.com)
 
 ## 📄 Licencia
 
@@ -114,7 +146,7 @@ Este proyecto es software propietario. Todos los derechos reservados.
 
 ### Versión 1.01
 
-- Sistema base estable
+- Sistema base estableok
 - Funcionalidades principales implementadas
 - Exportación a CSV y Excel
 - Sistema de ayuda integrado
