@@ -32,7 +32,7 @@ CREATE TABLE products (
 -- Tabla de ventas
 CREATE TABLE sales (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    invoice_number TEXT NOT NULL UNIQUE,
+    invoice_number TEXT NOT NULL UNIQUE DEFAULT public.generate_invoice_number(),
     customer_name TEXT,
     customer_email TEXT,
     customer_phone TEXT,
@@ -51,8 +51,12 @@ CREATE TABLE sale_items (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     sale_id UUID REFERENCES sales(id) ON DELETE CASCADE,
     product_id UUID REFERENCES products(id),
-    quantity INTEGER NOT NULL,
-    price DECIMAL(10,2) NOT NULL,
+    product_name TEXT,
+    product_price DECIMAL(10,2),
+    quantity INTEGER NOT NULL DEFAULT 1,
+    unit_price DECIMAL(10,2),
+    price DECIMAL(10,2), -- Removemos NOT NULL para permitir que el trigger lo establezca
+    subtotal DECIMAL(10,2),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL
 );
 
