@@ -5,10 +5,14 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TABLE company_settings (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     company_name TEXT NOT NULL,
-    address TEXT,
-    phone TEXT,
-    email TEXT,
-    tax_rate DECIMAL(5,2) DEFAULT 0,
+    company_address TEXT,
+    company_phone TEXT,
+    company_email TEXT,
+    company_tax_rate DECIMAL(5,2) DEFAULT 0,
+    currency TEXT DEFAULT 'PEN',
+    logo_url TEXT,
+    tax_id TEXT,
+    user_id UUID REFERENCES auth.users(id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL
 );
