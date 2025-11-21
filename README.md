@@ -5,7 +5,7 @@
 
 Sistema de punto de venta e inventario desarrollado con React y Supabase, diseñado para pequeños y medianos negocios.
 
-## 🚀 Características
+## Características
 
 ### Punto de Venta (POS)
 
@@ -38,7 +38,7 @@ Sistema de punto de venta e inventario desarrollado con React y Supabase, diseñ
 - Configuración de impuestos y descuentos
 - Respaldo en la nube con Supabase
 
-## 💻 Tecnologías
+## Tecnologías
 
 - **Frontend**: React + TypeScript
 - **UI Components**: Radix UI + Tailwind CSS
@@ -65,7 +65,7 @@ cp .env.example .env
 pnpm run dev
 ```
 
-## 🔧 Configuración
+## Configuración
 
 ### Variables de Entorno Requeridas
 
@@ -114,7 +114,7 @@ Cada tabla incluye:
 - Triggers para automatización
 - Referencias y claves foráneas
 
-## 📱 Uso
+## Uso
 
 1. **Iniciar Sesión**: Accede con tus credenciales
 2. **Punto de Venta**:
@@ -129,7 +129,7 @@ Cada tabla incluye:
    - Exporta reportes
    - Visualiza detalles
 
-## 🤝 Soporte
+## Soporte
 
 ### Desarrollador
 
@@ -138,11 +138,11 @@ Cada tabla incluye:
 - **Horario**: Lunes a Viernes, 8:00 AM - 6:00 PM
 - **Email**: [ingenios.inc@gmail.com](mailto:ingenios.inc@gmail.com)
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es software propietario. Todos los derechos reservados.
 
-## 🔄 Actualizaciones
+## Actualizaciones
 
 ### Versión 1.01
 
